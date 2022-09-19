@@ -5,7 +5,7 @@ const FooterButtons = ({title, onPress, icon}) => {
   return (
     <Pressable onPress={onPress} style={styles.itemContainer}>
       <View>
-        <Icon name={icon} color={'blue'} size={20} style={styles.icon}></Icon>
+        <Icon name={icon} size={20} style={styles.icon}></Icon>
         <Text style={styles.items}>{title}</Text>
       </View>
     </Pressable>
@@ -22,9 +22,10 @@ const styles = StyleSheet.create({
   },
 
   items: {
-    color: 'blue',
+    color: '#2179ff',
   },
   icon: {
+    color: '#2179ff',
     position: 'relative',
     left: 1,
   },

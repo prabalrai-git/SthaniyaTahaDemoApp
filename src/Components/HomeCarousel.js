@@ -55,7 +55,7 @@ function HomeCarousel() {
 const styles = StyleSheet.create({
   container: {
     flex: 0,
-    backgroundColor: '#f7f7f7',
+    backgroundColor: '#deeafc',
     alignItems: 'center',
     justifyContent: 'center',
   },

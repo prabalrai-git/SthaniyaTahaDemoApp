@@ -4,8 +4,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 export function GeneralInfoCard({title, id, icon, textNumber}) {
   return (
-    <Pressable style={styles.itemContainer}>
-      <View style={styles.mainContainer}>
+    <Pressable id={id}>
+      <View style={styles.Container}>
         <Text style={styles.text}>
           {'    '}
           <Icon name={icon} style={styles.icon}></Icon>
@@ -21,19 +21,11 @@ export function GeneralInfoCard({title, id, icon, textNumber}) {
 export default GeneralInfoCard;
 
 const styles = StyleSheet.create({
-  itemContainer: {
-    flexDirection: 'column',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-  },
-
-  mainContainer: {
+  Container: {
     backgroundColor: '#2179ff',
-    padding: 10,
-    height: 98,
-    width: '30%',
-    margin: '2%',
-    marginLeft: 15,
+    padding: 20,
+    height: 100,
+
     borderRadius: 10,
   },
   text: {
@@ -47,6 +39,7 @@ const styles = StyleSheet.create({
     marginLeft: 14,
   },
   icon: {
-    fontSize: 25,
+    fontSize: 30,
+    color: 'white',
   },
 });

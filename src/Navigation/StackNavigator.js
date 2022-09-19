@@ -7,6 +7,7 @@ import {News} from '../Screens/News';
 import {Text} from 'react-native';
 import {FooterNavigation} from '../Components/FooterNavigation';
 import CommonHeader from '../Components/CommonHeader';
+import CovidInfo from '../Screens/CovidInfo';
 
 export default function StackNavigator() {
   const Stack = createNativeStackNavigator();
@@ -39,6 +40,13 @@ export default function StackNavigator() {
         <Stack.Screen
           name="News"
           component={News}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="covidInfo"
+          component={CovidInfo}
           options={{
             headerShown: false,
           }}
