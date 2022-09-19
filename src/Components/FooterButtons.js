@@ -16,7 +16,7 @@ export default FooterButtons;
 
 const styles = StyleSheet.create({
   itemContainer: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
   },
