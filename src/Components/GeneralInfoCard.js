@@ -23,7 +23,7 @@ export default GeneralInfoCard;
 const styles = StyleSheet.create({
   Container: {
     backgroundColor: '#2179ff',
-    padding: 20,
+    padding: 16,
     height: 100,
 
     borderRadius: 10,

@@ -4,7 +4,15 @@ import React from 'react';
 const CovidInfo = () => {
   return (
     <View>
-      <Text>CovidInfo</Text>
+      <Text
+        style={{
+          fontSize: 20,
+          color: 'black',
+          textAlign: 'center',
+          marginTop: 100,
+        }}>
+        COVID सम्बन्धि जानकारी
+      </Text>
     </View>
   );
 };

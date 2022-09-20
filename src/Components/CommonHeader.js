@@ -5,7 +5,6 @@ import {
   Image,
   Pressable,
   Modal,
-  TouchableWithoutFeedback,
   TouchableOpacity,
 } from 'react-native';
 import React, {useState} from 'react';
@@ -15,7 +14,7 @@ export default function CommonHeader() {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
-    <View style={styles.mainContainer}>
+    <View style={[styles.mainContainer, styles.elevation]}>
       <Text style={styles.inlineE}>
         <Image
           style={styles.img}
@@ -61,7 +60,7 @@ export default function CommonHeader() {
             }}>
             <TouchableOpacity
               style={styles.modal}
-              onPress={() => console.log('do nothing')}
+              onPress={() => alert('you clicked me')}
               activeOpacity={1}>
               <Text style={{color: 'black', textAlign: 'center'}}>
                 {' '}
@@ -79,9 +78,6 @@ const styles = StyleSheet.create({
   mainContainer: {
     height: 60,
     backgroundColor: 'white',
-    borderStyle: 'solid',
-    borderWidth: 0.2,
-    borderBottomColor: 'grey',
   },
   img: {
     width: 50,
@@ -120,8 +116,12 @@ const styles = StyleSheet.create({
   modal: {
     marginTop: 20,
     marginRight: 15,
-    backgroundColor: '#faf9f6',
+    backgroundColor: 'white',
     width: 155,
     height: 45,
+    elevation: 8,
+    shadowColor: '#52006A',
   },
+  // box shadow
+  elevation: {elevation: 8, shadowColor: '#52006A'},
 });

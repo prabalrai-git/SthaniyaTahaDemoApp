@@ -1,4 +1,4 @@
-import {Pressable, StyleSheet, Text, View, FlatList} from 'react-native';
+import {Pressable, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 const onclick = () => {
@@ -26,8 +26,9 @@ const styles = StyleSheet.create({
     height: 70,
     marginBottom: 10,
 
-    width: '90%',
+    width: '95%',
     borderRadius: 10,
+    marginLeft: 4,
   },
   itemContainer: {
     flexDirection: 'row',
