@@ -1,10 +1,16 @@
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-const onclick = () => {
-  alert('you clicked me ');
-};
+import {useNavigation} from '@react-navigation/native';
+
 export function InfoCards({title, id, icon, textData}) {
+  const navigation = useNavigation();
+
+  const onclick = () => {
+    navigation.navigate('commonScreen', {
+      title: title,
+    });
+  };
   return (
     <Pressable
       style={id == 7 ? styles.fullcontainer : styles.itemContainer}

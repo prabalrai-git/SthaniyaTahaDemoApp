@@ -68,7 +68,7 @@ export default MenuItems;
 
 const styles = StyleSheet.create({
   img: {
-    marginTop: -20,
+    marginTop: 20,
     marginLeft: 50,
     width: 140,
     height: 70,
@@ -91,7 +91,8 @@ const styles = StyleSheet.create({
     width: '90%',
     marginLeft: 10,
     marginTop: 33,
-    height: '69%',
+    // height: '69%',
+
     borderRadius: 8,
   },
   //   for box shadow
