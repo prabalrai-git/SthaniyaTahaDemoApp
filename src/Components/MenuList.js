@@ -18,7 +18,7 @@ const MenuList = ({id, icon, title}) => {
 
   return (
     <Pressable onPress={onPress}>
-      <View id={id}>
+      <View id={id} styles={{flex: 1}}>
         <Icon name={icon} style={styles.icon}>
           {'   '}
           <Text style={styles.txt}>{title}</Text>
@@ -35,6 +35,9 @@ const styles = StyleSheet.create({
     color: '#2179ff',
     fontSize: 15,
     marginLeft: 10,
-    marginTop: 36,
+    // marginTop: 30,
+  },
+  txt: {
+    fontSize: 18,
   },
 });

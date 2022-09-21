@@ -1,18 +1,8 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  Pressable,
-  Modal,
-  TouchableOpacity,
-} from 'react-native';
-import React, {useState} from 'react';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import {View, Text, StyleSheet, Image} from 'react-native';
+import React from 'react';
+import NotificationIcons from './NotificationIcons';
 
 export default function CommonHeader() {
-  const [modalVisible, setModalVisible] = useState(false);
-
   return (
     <View style={[styles.mainContainer, styles.elevation]}>
       <Text style={styles.inlineE}>
@@ -24,52 +14,7 @@ export default function CommonHeader() {
         <Text style={styles.text1}>प्रदेश नं १, सोलुखुम्बु, नेपाल</Text>
       </Text>
       <Text style={styles.text}>थुलुङ दुधकोशी गाउँपालिका</Text>
-      <Text style={styles.NIcons}>
-        <Pressable>
-          <Text>
-            <Icon
-              name="bell-o"
-              color="#2179ff"
-              size={20}
-              style={styles.NIIcons}
-            />
-            {'     '}
-          </Text>
-        </Pressable>
-        <Pressable onPress={() => setModalVisible(true)}>
-          <Text>
-            <Icon
-              name="ellipsis-v"
-              color="grey"
-              size={20}
-              style={styles.NIIcons}
-            />
-          </Text>
-        </Pressable>
-        <Modal
-          animationType="slide"
-          transparent={true}
-          visible={modalVisible}
-          onRequestClose={() => {
-            setModalVisible(false);
-          }}>
-          <TouchableOpacity
-            style={styles.modalContainer}
-            onPress={() => {
-              setModalVisible(false);
-            }}>
-            <TouchableOpacity
-              style={styles.modal}
-              onPress={() => alert('you clicked me')}
-              activeOpacity={1}>
-              <Text style={{color: 'black', textAlign: 'center'}}>
-                {' '}
-                भुक्तानी विवरण{' '}
-              </Text>
-            </TouchableOpacity>
-          </TouchableOpacity>
-        </Modal>
-      </Text>
+      <NotificationIcons />
     </View>
   );
 }
@@ -97,31 +42,5 @@ const styles = StyleSheet.create({
   inlineE: {
     marginLeft: 90,
   },
-  NIcons: {
-    position: 'relative',
-    top: -35,
-    left: 325,
-    margin: 10,
-  },
-  NIIcons: {
-    fontSize: 20,
-    fontWeight: 'light',
-  },
-  ///
-  modalContainer: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-end',
-  },
-  modal: {
-    marginTop: 20,
-    marginRight: 15,
-    backgroundColor: 'white',
-    width: 155,
-    height: 45,
-    elevation: 8,
-    shadowColor: '#52006A',
-  },
-  // box shadow
   elevation: {elevation: 8, shadowColor: '#52006A'},
 });

@@ -22,7 +22,7 @@ const MenuItems = () => {
   ];
 
   return (
-    <View>
+    <>
       <Pressable
         onPress={() => {
           setModalVisible(false);
@@ -32,35 +32,49 @@ const MenuItems = () => {
           style={{
             fontSize: 25,
             marginLeft: 5,
-            marginTop: 15,
+            marginTop: 5,
             color: 'black',
           }}></Icon>
       </Pressable>
+
       <Image
         style={styles.img}
         source={require('../Assets/img/Nepal-Government.jpg')}
         resizeMode={'cover'}
       />
       <Text style={styles.txt}>अतिथि प्रयोगकर्ता</Text>
-      <View style={[styles.singleCard, styles.elevation]}>
-        <Icon
-          name="information-outline"
-          style={{
-            marginLeft: 5,
-            color: '#2179ff',
-            fontSize: 13,
-          }}>
-          {'     '}
-          <Text style={{fontWeight: '500'}}>हाम्रो बारेमा</Text>
-        </Icon>
+
+      <View style={styles.flexContainer}>
+        <View style={[styles.singleCard, styles.elevation, {flex: 1}]}>
+          <Icon
+            name="information-outline"
+            style={{
+              marginLeft: 5,
+              color: '#2179ff',
+              fontSize: 18,
+            }}>
+            {'     '}
+            <Text style={{fontWeight: '500', fontSize: 20}}>हाम्रो बारेमा</Text>
+          </Icon>
+        </View>
+        {/* menu card view */}
+        <View
+          style={[
+            styles.menuItemsContainer,
+            styles.elevation,
+            {flex: 20, justifyContent: 'space-evenly'},
+          ]}>
+          {menuListData.map(e => (
+            <MenuList
+              id={e.id}
+              title={e.title}
+              icon={e.icon}
+              style={{flex: 1}}
+            />
+          ))}
+        </View>
       </View>
-      {/* menu card view */}
-      <View style={[styles.menuItems, styles.elevation]}>
-        {menuListData.map(e => (
-          <MenuList id={e.id} title={e.title} icon={e.icon} />
-        ))}
-      </View>
-    </View>
+    </>
   );
 };
 
@@ -68,7 +82,6 @@ export default MenuItems;
 
 const styles = StyleSheet.create({
   img: {
-    marginTop: 20,
     marginLeft: 50,
     width: 140,
     height: 70,
@@ -76,7 +89,7 @@ const styles = StyleSheet.create({
   txt: {
     color: '#2179ff',
     textAlign: 'center',
-    fontSize: 18,
+    fontSize: 22,
   },
   singleCard: {
     backgroundColor: '#deeafc',
@@ -86,12 +99,13 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 8,
   },
-  menuItems: {
+  menuItemsContainer: {
     backgroundColor: '#deeafc',
     width: '90%',
     marginLeft: 10,
-    marginTop: 33,
-    // height: '69%',
+    marginTop: 15,
+    marginBottom: 10,
+    // height: '67%',
 
     borderRadius: 8,
   },
@@ -99,5 +113,9 @@ const styles = StyleSheet.create({
   elevation: {
     elevation: 8,
     shadowColor: '#52006A',
+  },
+  // flexbox
+  flexContainer: {
+    flex: 1,
   },
 });

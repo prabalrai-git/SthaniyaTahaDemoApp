@@ -20,7 +20,7 @@ const FooterButtons = ({title, onPress, icon}) => {
       <Pressable
         onPress={() => setModalVisible(true)}
         style={styles.itemContainer}>
-        <View>
+        <View styles={styles.itemsContainer}>
           <Icon name={icon} size={20} style={styles.icon}></Icon>
           <Text style={styles.items}>{title}</Text>
         </View>
@@ -52,7 +52,7 @@ const FooterButtons = ({title, onPress, icon}) => {
     </ModalContext.Provider>
   ) : (
     <Pressable onPress={onPress} style={styles.itemContainer}>
-      <View>
+      <View styles={styles.itemsContainer}>
         <Icon name={icon} size={20} style={styles.icon}></Icon>
         <Text style={styles.items}>{title}</Text>
       </View>
@@ -88,5 +88,10 @@ const styles = StyleSheet.create({
     height: '100%',
     elevation: 200,
     shadowColor: '#52006A',
+  },
+  itemContainer: {
+    // backgroundColor: 'black',
+    paddingLeft: 20,
+    paddingRight: 20,
   },
 });
